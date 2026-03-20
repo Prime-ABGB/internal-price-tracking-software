@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <link rel="stylesheet" href="comparison.css">
+  <title>Product Comparison</title>
+</head>
+<body>
+  <div class="logo">
+    <a href="/">
+        <img src="./logo_lightmode.png" alt="primeLogo" height="72" width="264">
+    </a>
+  </div>
+  <h3>Product Comparison</h1>
+  <button id="copyTableBtn">Copy Table</button>  
+  <div id="productDetails">
+    <!-- Product details will be populated here -->
+  </div>
+  <br>
+  <div id="monthFilter">
+    <label><input type="checkbox" value="2025-01" class="month-checkbox"> January 2025</label>
+    <label><input type="checkbox" value="2024-12" class="month-checkbox"> December 2024</label>
+    <label><input type="checkbox" value="2024-11" class="month-checkbox"> November 2024</label>
+    <label><input type="checkbox" value="2024-10" class="month-checkbox"> October 2024</label>
+    <label><input type="checkbox" value="2024-09" class="month-checkbox"> September 2024</label>
+    <label><input type="checkbox" value="2024-08" class="month-checkbox"> August 2024</label>
+  </div>
+  <div class="chart-price">
+    <canvas id="testChart"></canvas>
+  </div>
+  <script src="comparison.js"></script>
+</body>
+</html>

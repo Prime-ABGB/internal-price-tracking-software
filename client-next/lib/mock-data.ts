@@ -1,0 +1,253 @@
+import type { Product } from './types'
+
+export const cpuProducts: Product[] = [
+  {
+    id: 'cpu-1',
+    name: 'Intel Core i9-14900K',
+    brand: 'Intel',
+    price: 589.99,
+    priceChange: 2.1,
+    specs: {
+      cores: 24,
+      threads: 32,
+      baseClock: '3.2 GHz',
+      boostClock: '6.0 GHz',
+      tdp: '253W',
+      cache: '36 MB',
+    },
+    priceHistory: [
+      { date: 'Jan 1', price: 579.99 },
+      { date: 'Jan 8', price: 585.00 },
+      { date: 'Jan 15', price: 589.99 },
+    ],
+  },
+  {
+    id: 'cpu-2',
+    name: 'AMD Ryzen 9 7950X3D',
+    brand: 'AMD',
+    price: 569.99,
+    priceChange: -1.5,
+    specs: {
+      cores: 16,
+      threads: 32,
+      baseClock: '4.2 GHz',
+      boostClock: '5.7 GHz',
+      tdp: '162W',
+      cache: '144 MB',
+    },
+    priceHistory: [
+      { date: 'Jan 1', price: 578.99 },
+      { date: 'Jan 8', price: 574.00 },
+      { date: 'Jan 15', price: 569.99 },
+    ],
+  },
+  {
+    id: 'cpu-3',
+    name: 'Intel Core i7-14700K',
+    brand: 'Intel',
+    price: 419.99,
+    priceChange: 0.8,
+    specs: {
+      cores: 20,
+      threads: 28,
+      baseClock: '3.4 GHz',
+      boostClock: '5.6 GHz',
+      tdp: '253W',
+      cache: '33 MB',
+    },
+    priceHistory: [
+      { date: 'Jan 1', price: 416.99 },
+      { date: 'Jan 8', price: 418.00 },
+      { date: 'Jan 15', price: 419.99 },
+    ],
+  },
+]
+
+export const gpuProducts: Product[] = [
+  {
+    id: 'gpu-1',
+    name: 'NVIDIA RTX 4090',
+    brand: 'NVIDIA',
+    price: 1699.99,
+    priceChange: -3.2,
+    specs: {
+      memory: '24 GB GDDR6X',
+      memoryBus: '384-bit',
+      cudaCores: 16384,
+      boostClock: '2.52 GHz',
+      tdp: '450W',
+      architecture: 'Ada',
+    },
+    priceHistory: [
+      { date: 'Jan 1', price: 1759.99 },
+      { date: 'Jan 8', price: 1729.99 },
+      { date: 'Jan 15', price: 1699.99 },
+    ],
+  },
+  {
+    id: 'gpu-2',
+    name: 'AMD Radeon RX 7900 XTX',
+    brand: 'AMD',
+    price: 799.99,
+    priceChange: 1.2,
+    specs: {
+      memory: '24 GB GDDR6',
+      memoryBus: '384-bit',
+      streamProcessors: 6144,
+      boostClock: '2.5 GHz',
+      tdp: '420W',
+      architecture: 'RDNA 3',
+    },
+    priceHistory: [
+      { date: 'Jan 1', price: 790.99 },
+      { date: 'Jan 8', price: 795.00 },
+      { date: 'Jan 15', price: 799.99 },
+    ],
+  },
+  {
+    id: 'gpu-3',
+    name: 'NVIDIA RTX 4080',
+    brand: 'NVIDIA',
+    price: 1199.99,
+    priceChange: 0.5,
+    specs: {
+      memory: '16 GB GDDR6X',
+      memoryBus: '256-bit',
+      cudaCores: 9728,
+      boostClock: '2.505 GHz',
+      tdp: '320W',
+      architecture: 'Ada',
+    },
+    priceHistory: [
+      { date: 'Jan 1', price: 1194.99 },
+      { date: 'Jan 8', price: 1197.00 },
+      { date: 'Jan 15', price: 1199.99 },
+    ],
+  },
+]
+
+export const ramProducts: Product[] = [
+  {
+    id: 'ram-1',
+    name: 'Corsair Dominator Platinum RGB 32GB',
+    brand: 'Corsair',
+    price: 159.99,
+    priceChange: -2.1,
+    specs: {
+      capacity: '32 GB',
+      type: 'DDR5',
+      speed: '6000 MHz',
+      cas: 'CAS 30',
+      voltage: '1.40V',
+      timing: '30-36-36-76',
+    },
+    priceHistory: [
+      { date: 'Jan 1', price: 163.99 },
+      { date: 'Jan 8', price: 161.00 },
+      { date: 'Jan 15', price: 159.99 },
+    ],
+  },
+  {
+    id: 'ram-2',
+    name: 'G.Skill Trident Z5 64GB',
+    brand: 'G.Skill',
+    price: 259.99,
+    priceChange: 0.4,
+    specs: {
+      capacity: '64 GB',
+      type: 'DDR5',
+      speed: '6000 MHz',
+      cas: 'CAS 30',
+      voltage: '1.25V',
+      timing: '30-36-36-76',
+    },
+    priceHistory: [
+      { date: 'Jan 1', price: 258.99 },
+      { date: 'Jan 8', price: 259.00 },
+      { date: 'Jan 15', price: 259.99 },
+    ],
+  },
+  {
+    id: 'ram-3',
+    name: 'Kingston Fury Beast 16GB',
+    brand: 'Kingston',
+    price: 49.99,
+    priceChange: -1.0,
+    specs: {
+      capacity: '16 GB',
+      type: 'DDR4',
+      speed: '3200 MHz',
+      cas: 'CAS 16',
+      voltage: '1.35V',
+      timing: '16-20-20-38',
+    },
+    priceHistory: [
+      { date: 'Jan 1', price: 50.49 },
+      { date: 'Jan 8', price: 50.25 },
+      { date: 'Jan 15', price: 49.99 },
+    ],
+  },
+]
+
+export const ssdProducts: Product[] = [
+  {
+    id: 'ssd-1',
+    name: 'Samsung 990 Pro 2TB',
+    brand: 'Samsung',
+    price: 179.99,
+    priceChange: 1.1,
+    specs: {
+      capacity: '2 TB',
+      interface: 'NVMe PCIe 4.0',
+      speed: 'up to 7,100 MB/s',
+      formFactor: 'M.2 2280',
+      controller: 'Polaris',
+      warranty: '5 years',
+    },
+    priceHistory: [
+      { date: 'Jan 1', price: 178.09 },
+      { date: 'Jan 8', price: 179.00 },
+      { date: 'Jan 15', price: 179.99 },
+    ],
+  },
+  {
+    id: 'ssd-2',
+    name: 'WD Black SN850X 1TB',
+    brand: 'Western Digital',
+    price: 89.99,
+    priceChange: -0.5,
+    specs: {
+      capacity: '1 TB',
+      interface: 'NVMe PCIe 4.0',
+      speed: 'up to 7,100 MB/s',
+      formFactor: 'M.2 2280',
+      controller: 'Custom',
+      warranty: '5 years',
+    },
+    priceHistory: [
+      { date: 'Jan 1', price: 90.44 },
+      { date: 'Jan 8', price: 90.20 },
+      { date: 'Jan 15', price: 89.99 },
+    ],
+  },
+  {
+    id: 'ssd-3',
+    name: 'Crucial P5 Plus 1TB',
+    brand: 'Crucial',
+    price: 74.99,
+    priceChange: 2.3,
+    specs: {
+      capacity: '1 TB',
+      interface: 'NVMe PCIe 4.0',
+      speed: 'up to 6,600 MB/s',
+      formFactor: 'M.2 2280',
+      controller: 'Micron',
+      warranty: '5 years',
+    },
+    priceHistory: [
+      { date: 'Jan 1', price: 73.29 },
+      { date: 'Jan 8', price: 74.10 },
+      { date: 'Jan 15', price: 74.99 },
+    ],
+  },
+]

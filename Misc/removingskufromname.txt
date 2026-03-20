@@ -1,0 +1,3 @@
+UPDATE ssd_products
+SET product_name = TRIM(REPLACE(product_name, product_sku, ''))
+WHERE product_name LIKE '%' || product_sku || '%';

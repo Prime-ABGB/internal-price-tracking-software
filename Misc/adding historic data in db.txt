@@ -1,0 +1,83 @@
+CREATE TABLE historical_prices (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    sku TEXT NOT NULL,
+	category TEXT NOT NULL,
+    date TEXT NOT NULL,
+    prime_price REAL,
+	prime_stock VARCHAR,
+    mdcomp_price REAL,
+	mdcomp_stock VARCHAR,
+    vedant_price REAL,
+	vedant_stock VARCHAR,
+	pcstudio_price REAL,
+	pcstudio_stock VARCHAR,
+	clarion_price REAL,
+	clarion_stock VARCHAR,
+	ehubs_price REAL,
+	ehubs_stock VARCHAR,
+    UNIQUE (sku, date)
+);
+
+ALTER TABLE historical_prices ADD COLUMN category VARCHAR;
+
+
+INSERT INTO historical_prices (sku, date, category)
+SELECT cpu.product_sku, 'TBD', 'cpu'
+FROM cpu_products cpu
+LEFT JOIN historical_prices hp ON cpu.product_sku = hp.sku
+WHERE hp.sku IS NULL;
+
+
+INSERT INTO historical_prices (sku, date, category)
+SELECT ssd.product_sku, 'TBD', 'ssd'
+FROM ssd_products ssd
+LEFT JOIN historical_prices hp ON ssd.product_sku = hp.sku
+WHERE hp.sku IS NULL;
+
+
+INSERT INTO historical_prices (sku, date, category)
+SELECT ram.product_sku, 'TBD', 'ram'
+FROM ram_products ram
+LEFT JOIN historical_prices hp ON ram.product_sku = hp.sku
+WHERE hp.sku IS NULL;
+
+
+=== if some target website breaks, you can just copy paste previous day's data=====
+
+UPDATE historical_prices AS current
+SET 
+    clarion_price = previous.clarion_price,
+    clarion_stock = previous.clarion_stock
+FROM (
+    SELECT 
+        sku, 
+        clarion_price, 
+        clarion_stock 
+    FROM historical_prices 
+    WHERE date = '2024-09-17'
+) AS previous
+WHERE 
+    current.sku = previous.sku 
+    AND current.date = '2024-09-18';
+=============Fastmoving historic data========================
+
+CREATE TABLE fastmoving_historical_prices (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    sku TEXT NOT NULL,
+	category TEXT NOT NULL,
+    date TEXT NOT NULL,
+    time_slot TEXT NOT NULL,
+	prime_price REAL,
+	prime_stock VARCHAR,
+    mdcomp_price REAL,
+	mdcomp_stock VARCHAR,
+    vedant_price REAL,
+	vedant_stock VARCHAR,
+	pcstudio_price REAL,
+	pcstudio_stock VARCHAR,
+	clarion_price REAL,
+	clarion_stock VARCHAR,
+	ehubs_price REAL,
+	ehubs_stock VARCHAR,
+    UNIQUE(sku, time_slot, date)
+);
